@@ -1,16 +1,16 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/artemcherepanov2357/python-project-50/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/artemcherepanov2357/python-project-50/actions)
 
+## Usage Example
+
 [![Demo](https://asciinema.org/a/n9boKSPyMVRlPbvl1IjaS6nPI.svg)](https://asciinema.org/a/n9boKSPyMVRlPbvl1IjaS6nPI)
 
-## Пример использования
-
-### Как CLI-утилита
+### As a CLI utility
 ```bash
 gendiff file1.json file2.json
 ```
 
-Вывод:
+Output:
 ```
 {
   - follow: false
@@ -22,7 +22,7 @@ gendiff file1.json file2.json
 }
 ```
 
-### Как библиотека
+### As a library
 ```python
 from gendiff import generate_diff
 
