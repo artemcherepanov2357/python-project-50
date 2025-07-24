@@ -1,8 +1,18 @@
+# Environment and cache folders
+.venv/
+__pycache__/
+*.py[cod]
+*_cache/
+.idea/
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Python package/dist artifacts
 *.egg-info
-__pycache__
 dist/
-*.pyc
-.venv
+
+# Coverage files
 .coverage
 coverage.xml
-*_cache/
