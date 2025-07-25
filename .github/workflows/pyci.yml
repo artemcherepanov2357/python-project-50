@@ -30,6 +30,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.organization=artencherepanov2357
-            -Dsonar.projectKey=artencherepanov2357_python-project-50
+            -Dsonar.organization=artemcherepanov2357
+            -Dsonar.projectKey=artemcherepanov2357_python-project-50
             -Dsonar.python.coverage.reportPaths=coverage.xml
