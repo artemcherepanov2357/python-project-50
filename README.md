@@ -1,6 +1,7 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/artemcherepanov2357/python-project-50/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/artemcherepanov2357/python-project-50/actions)
-
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=artemcherepanov2357_python-project-50&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=artemcherepanov2357_python-project-50)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=artemcherepanov2357_python-project-50&metric=coverage)](https://sonarcloud.io/summary/new_code?id=artemcherepanov2357_python-project-50)
 ## Usage Example
 
 [![Demo](https://asciinema.org/a/n9boKSPyMVRlPbvl1IjaS6nPI.svg)](https://asciinema.org/a/n9boKSPyMVRlPbvl1IjaS6nPI)
