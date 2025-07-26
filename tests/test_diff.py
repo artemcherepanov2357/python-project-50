@@ -39,11 +39,13 @@ def test_invalid_file():
             get_fixture_path('file2.json')
         )
 
+
 def test_empty_files():
     assert generate_diff(
         get_fixture_path('empty.json'),
         get_fixture_path('empty.json')
     ) == "{\n\n}"
+
 
 def test_single_key():
     expected = read_expected('expected_single_key.txt')
