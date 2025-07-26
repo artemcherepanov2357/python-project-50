@@ -25,3 +25,30 @@ def test_generate_diff(file1, file2):
         get_fixture_path(file2)
     )
     assert result == expected
+
+
+def test_nonexistent_file():
+    with pytest.raises(FileNotFoundError):
+        generate_diff('nonexistent.json', 'file2.json')
+
+
+def test_invalid_file():
+    with pytest.raises(ValueError):
+        generate_diff(
+            get_fixture_path('broken.json'),
+            get_fixture_path('file2.json')
+        )
+
+def test_empty_files():
+    assert generate_diff(
+        get_fixture_path('empty.json'),
+        get_fixture_path('empty.json')
+    ) == "{\n\n}"
+
+def test_single_key():
+    expected = read_expected('expected_single_key.txt')
+    result = generate_diff(
+        get_fixture_path('single1.json'),
+        get_fixture_path('single2.json')
+    )
+    assert result == expected
