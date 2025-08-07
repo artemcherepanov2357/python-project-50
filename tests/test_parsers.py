@@ -1,6 +1,6 @@
 import pytest
 
-from gendiff.parsers import get_extension, parse
+from gendiff.parsers import get_extension, parse_file
 
 
 @pytest.mark.parametrize("extension, data", [
@@ -9,13 +9,13 @@ from gendiff.parsers import get_extension, parse
     ('.yaml', 'key: value')
 ])
 def test_parse(extension, data):
-    result = parse(data, extension)
+    result = parse_file(data, extension)
     assert result == {"key": "value"}
 
 
 def test_parse_unsupported_format():
     with pytest.raises(ValueError):
-        parse("data", ".txt")
+        parse_file("data", ".txt")
 
 
 def test_get_extension():

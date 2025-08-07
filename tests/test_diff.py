@@ -1,43 +1,28 @@
 import os
-
 import pytest
 
 from gendiff import generate_diff
 
 
-def get_fixture_path(filename):
-    return os.path.join('tests', 'test_data', filename)
+def get_fixture_path(*args):
+    return os.path.join(os.path.dirname(__file__), 'fixtures', *args)
 
 
-def read_expected(filename):
-    with open(get_fixture_path(filename)) as f:
+def read_file(path):
+    with open(path) as f:
         return f.read().strip()
 
 
-@pytest.mark.parametrize("file1, file2", [
-    ('file1.json', 'file2.json'),
-    ('file1.yml', 'file2.yml'),
+@pytest.mark.parametrize("test_case,ext", [
+    ("flat", "json"),
+    ("flat", "yml"),
+    ("nested", "json"),
+    ("nested", "yml")
 ])
-def test_generate_diff(file1, file2):
-    expected = read_expected('expected_result.txt')
-    result = generate_diff(
-        get_fixture_path(file1),
-        get_fixture_path(file2)
-    )
-    assert result == expected
+def test_generate_diff(test_case, ext):
+    file1 = get_fixture_path(test_case, f"file1.{ext}")
+    file2 = get_fixture_path(test_case, f"file2.{ext}")
+    expected = read_file(get_fixture_path("expected", f"{test_case}.txt"))
 
-
-def test_empty_files():
-    assert generate_diff(
-        get_fixture_path('empty.json'),
-        get_fixture_path('empty.json')
-    ) == "{\n\n}"
-
-
-def test_single_key():
-    expected = read_expected('expected_single_key.txt')
-    result = generate_diff(
-        get_fixture_path('single1.json'),
-        get_fixture_path('single2.json')
-    )
+    result = generate_diff(file1, file2)
     assert result == expected
