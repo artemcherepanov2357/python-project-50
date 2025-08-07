@@ -43,6 +43,4 @@ def format_diff(diff, depth=0):
 def format_stylish(diff):
     inner = format_diff(diff)
     result = '{\n' + inner + '\n}'
-    # with open("actual_output.txt", "w") as f:
-    #     f.write(result)
     return result
