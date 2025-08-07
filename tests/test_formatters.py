@@ -2,6 +2,7 @@ import ast
 
 import pytest
 
+from gendiff.formatters.plain import format_plain
 from gendiff.formatters.stylish import format_stylish
 
 
@@ -15,3 +16,8 @@ def test_stylish_format(diff_example):
     with open('tests/fixtures/expected/nested.txt', 'r') as f:
         expected = f.read()
     assert format_stylish(diff_example) == expected
+
+
+def test_plain_format(diff_example):
+    with open('tests/fixtures/expected/result_plain.txt', 'r') as result:
+        assert format_plain(diff_example) == result.read()
