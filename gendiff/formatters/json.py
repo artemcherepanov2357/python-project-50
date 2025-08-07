@@ -3,8 +3,6 @@ import json
 
 def format_json(diff):
     result = json.dumps(build_json_output(diff), indent=2)
-    with open("json_out", "w") as f:
-        f.write(result)
     return result
 
 
