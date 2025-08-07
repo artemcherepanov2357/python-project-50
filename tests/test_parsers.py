@@ -12,7 +12,6 @@ from gendiff.parsers import get_extension, parse_file
     ('.yaml', 'key: value', {"key": "value"})
 ])
 def test_parse(extension, data, expected):
-    # Создаем временный файл с нужным расширением
     with tempfile.NamedTemporaryFile(mode='w', suffix=extension, delete=False) as f:
         f.write(data)
         f.flush()

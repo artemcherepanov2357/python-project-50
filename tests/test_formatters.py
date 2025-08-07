@@ -7,7 +7,7 @@ from gendiff.formatters.stylish import format_stylish
 
 @pytest.fixture
 def diff_example():
-    with open('tests/fixtures/nested/nested_diff.txt', 'r') as f:
+    with open('tests/fixtures/expected/nested_diff.txt', 'r') as f:
         return ast.literal_eval(f.read())
 
 
