@@ -4,7 +4,6 @@ from os.path import splitext
 import yaml
 
 
-
 def get_extension(file_path):
     """Returns the file extension in lowercase."""
     return splitext(file_path)[1].lower()
