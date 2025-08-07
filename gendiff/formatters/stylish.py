@@ -28,7 +28,8 @@ def format_diff(diff, depth=0):
         elif node['type'] == 'removed':
             lines.append(f"{indent}  - {key}: {format_value(node['value'], depth + 1)}")
         elif node['type'] == 'changed':
-            lines.append(f"{indent}  - {key}: {format_value(node['old_value'], depth + 1)}")
+            value = format_value(node['old_value'], depth + 1)
+            lines.append(f"{indent}  - {key}:" + (f" {value}" if value else ""))
             lines.append(f"{indent}  + {key}: {format_value(node['new_value'], depth + 1)}")
         else:  # unchanged
             lines.append(f"{indent}    {key}: {format_value(node['value'], depth)}")
