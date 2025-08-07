@@ -12,6 +12,7 @@ def format_value(value, depth):
         return '{\n' + '\n'.join(lines) + '\n' + closing_indent + '}'
     return str(value)
 
+
 def format_diff(diff, depth=0):
     lines = []
     for node in diff:

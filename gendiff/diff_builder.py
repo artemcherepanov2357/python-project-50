@@ -1,5 +1,4 @@
 def build_diff(data1, data2):
-    """Строит дерево различий между двумя структурами"""
     keys = sorted(set(data1.keys()) | set(data2.keys()))
     diff = []
 
