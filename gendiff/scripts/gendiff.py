@@ -6,7 +6,7 @@ from gendiff.parser_args import parse_args
 
 def main():
     try:
-        args = parse_args()  # Функция из parser_args.py
+        args = parse_args()
         print(generate_diff(args.first_file, args.second_file, args.format))
     except Exception as e:
         print(f"Error: {e}", file=sys.stderr)

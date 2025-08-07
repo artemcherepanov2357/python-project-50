@@ -28,3 +28,6 @@ source .venv/bin/activate
 gendiff tests/fixtures/nested/file1.json tests/fixtures/nested/file2.json --format stylish
 gendiff tests/fixtures/nested/file1.json tests/fixtures/nested/file2.json --format plain
 gendiff tests/fixtures/nested/file1.json tests/fixtures/nested/file2.json --format json
+```
+
+[![asciicast](https://asciinema.org/a/OQI8N2yP3akoc7ytUahXGMmWL.svg)](https://asciinema.org/a/OQI8N2yP3akoc7ytUahXGMmWL)
