@@ -2,32 +2,29 @@
 [![Actions Status](https://github.com/artemcherepanov2357/python-project-50/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/artemcherepanov2357/python-project-50/actions)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=artemcherepanov2357_python-project-50&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=artemcherepanov2357_python-project-50)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=artemcherepanov2357_python-project-50&metric=coverage)](https://sonarcloud.io/summary/new_code?id=artemcherepanov2357_python-project-50)
-## Usage Example
+[![Python CI](https://github.com/artemcherepanov2357/python-project-50/workflows/Python%20CI/badge.svg)](https://github.com/artemcherepanov2357/python-project-50/actions)
 
-[![Demo](https://asciinema.org/a/n9boKSPyMVRlPbvl1IjaS6nPI.svg)](https://asciinema.org/a/n9boKSPyMVRlPbvl1IjaS6nPI)
+# GENDIFF (Difference Generator)
+**GENDIFF** is a command-line utility that compares two files (JSON or YAML) and shows the differences in a human-readable or machine-readable format.
 
-### As a CLI utility
+## Features
+
+- Supports JSON and YAML formats
+- Output differences in three formats:
+  - `stylish` (default) - colored, human-readable output
+  - `plain` - flat text format
+  - `json` - machine-readable JSON output
+
+## Installation
+Clone the repository and install dependencies:
 ```bash
-gendiff file1.json file2.json
+git clone https://github.com/artemcherepanov2357/python-project-50.git
+make install
+source .venv/bin/activate
 ```
 
-Output:
-```
-{
-  - follow: false
-    host: hexlet.io
-  - proxy: 123.234.53.22
-  - timeout: 50
-  + timeout: 20
-  + verbose: true
-}
-```
-
-### As a library
-
-```python
-from gendiff import generate_diff
-
-diff = generate_diff('tests/test_data/file1.json', 'tests/test_data/file2.json')
-print(diff)
-```
+## Launch example
+```bash
+gendiff tests/fixtures/nested/file1.json tests/fixtures/nested/file2.json --format stylish
+gendiff tests/fixtures/nested/file1.json tests/fixtures/nested/file2.json --format plain
+gendiff tests/fixtures/nested/file1.json tests/fixtures/nested/file2.json --format json
