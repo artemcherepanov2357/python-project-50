@@ -1,5 +1,4 @@
-import pytest
-from gendiff.formatters.stylish import format_stylish, format_diff, format_value
+from gendiff.formatters.stylish import format_diff, format_stylish, format_value
 
 
 def test_format_value():
